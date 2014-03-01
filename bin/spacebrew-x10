@@ -1,0 +1,15 @@
+#!/usr/bin/env node
+"use strict";
+
+var sbx10 = require("../lib/spacebrew-x10");
+
+var opts = process.argv.slice(2);
+
+if(opts.length === 3) {
+  sbx10.connect(function () {
+    sbx10.addRange(process.argv[2], process.argv[3], process.argv[4]);
+  });
+} else {
+  console.log("\nUsage: spacebrew-x10 houseCode lowUnit highUnit\n\n",
+              "      spacebrew-x10 A 1 16\tConnects X10 Units 1 through 16 on House Code A to Spacebrew!\n");
+}

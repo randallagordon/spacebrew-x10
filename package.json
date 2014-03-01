@@ -1,0 +1,30 @@
+{
+  "name": "spacebrew-x10",
+  "version": "0.0.0",
+  "description": "Route X10 events via Spacebrew",
+  "main": "lib/spacebrew-x10.js",
+  "bin": {
+    "spacebrew-x10": "bin/spacebrew-x10"
+  },
+  "man": "./doc/spacebrew-x10.1",
+  "scripts": {
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/randallagordon/spacebrew-x10"
+  },
+  "keywords": [
+    "Spacebrew",
+    "X10"
+  ],
+  "author": "Randall A. Gordon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/randallagordon/spacebrew-x10/issues"
+  },
+  "dependencies": {
+    "spacebrew.js": "git://github.com/randallagordon/spacebrew.js#master",
+    "x10": "https://github.com/randallagordon/node-x10/tarball/personal"
+  }
+}

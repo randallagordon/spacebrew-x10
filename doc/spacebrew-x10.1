@@ -1,0 +1,65 @@
+.TH "SPACEBREW\-X10" "" "February 2014" "" ""
+.SH "NAME"
+\fBspacebrew-x10\fR
+.P
+Route X10 events via Spacebrew
+.SH CLI Utility Usage
+.P
+The CLI utility is a quick and easy way to connect X10 devices to the public Spacebrew admin interface\.
+.P
+.RS 2
+.EX
+$ npm i \-g spacebrew\-x10
+$ spacebrew\-x10 A 1 16
+
+[_onOpen:Spacebrew] Spacebrew connection opened, client name is: X10 \-> Spacebrew
+Connecting House Code A \- Units 1 to 16
+Spacebrew Message: House Code A \- 16 true
+      X10 Message: ON
+Spacebrew Message: House Code A \- 16 false
+      X10 Message: OFF
+.EE
+.RE
+.SH Module Usage Example
+.P
+.RS 2
+.EX
+var sbx10 = require("spacebrew\-x10");
+
+// Connect to Spacebrew, passing an onOpen handler
+sbx10\.connect(function () {
+
+  // Add ranges by passing a House Code ("A" through "P") and lower & upper Unit Code bounds
+  sbx10\.addRange("A", 1, 16);
+
+});
+.EE
+.RE
+.P
+And over in the Admin interface you\'ll see:
+.P
+Screenshot of Spacebrew Admin running example code \fIhttps://github\.com/randallagordon/spacebrew\-x10/raw/master/img/readme\-example\.png\fR
+.P
+By default this will create a connection to the public Spacebrew
+Admin \fIhttp://spacebrew\.github\.io/spacebrew/admin/admin\.html?server=sandbox\.spacebrew\.cc\fR
+interface\.
+.P
+To connect to another server: \fBsbx10\.connect({ server: "http://localhost/" })\fR
+.P
+To use a different name and description: \fBsbx10\.connect({ name: "Bob", description: "Bob\'s X10 Disco" })\fR
+.SH CHANGELOG
+.SS v0\.0\.1
+.RS 0
+.IP \(bu 2
+First release, woohoo!
+
+.RE
+.SH TODO
+.RS 0
+.IP \(bu 2
+.SH LICENSE
+
+.RE
+.P
+MIT
+
