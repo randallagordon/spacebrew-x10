@@ -1,6 +1,6 @@
 {
   "name": "spacebrew-x10",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Route X10 events via Spacebrew",
   "main": "lib/spacebrew-x10.js",
   "bin": {
